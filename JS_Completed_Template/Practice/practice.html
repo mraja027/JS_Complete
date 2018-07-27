@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Facebook</title>
+    <style>
+        body{
+            margin: 0;
+            font-family: "Comic Sans MS",sans-serif;
+        }
+        nav{
+            background-color: rgb(216,79,87);
+            padding: 15px 10px 15px 10px;
+
+        }
+        nav ul{
+            list-style: none;
+        }
+        nav ul li{
+            display: inline-block;
+        }
+        nav ul li a{
+            text-decoration: none;
+            padding: 5px;
+            font-size: 20px;
+            color: white;
+            font-family: montserrat;
+            margin: 0 5px;
+        }
+        nav ul li a:hover{
+            color: rgb(152,152,152);
+        }
+        .header-nav1{
+            display: inline;
+        }
+        .header-nav2{
+            display: inline;
+        }
+        .header-nav2 a{
+            text-align: right;
+        }
+        #modify{
+            background-color: white;
+            border-bottom: 2px solid gray;
+            height: 40px;
+            text-decoration:none;
+            position: fixed;
+        }
+        form{
+            border: 2px solid gray;
+            width: 300px;
+            margin: 5px 0 0 10px;
+            background-color: gray;
+            border-radius: 10px;
+            padding: 5px;
+            display: none;
+        }
+    </style>
+    <script>
+
+        function here() {
+            document.getElementById('dis').style.display = "block";
+        }
+
+         
+         function subClick() {
+
+            var UserName = document.getElementById("user").value;
+
+             if (UserName == "") {
+                document.getElementById("pop").innerHTML = "please enter username";
+                document.getElementById("user").style.borderColor='blue';
+             }
+             else{
+                document.getElementById("pop").innerHTML = "atleast one upper case";
+             }
+         }
+        
+    </script>
+</head>
+<body>
+   
+   <header>
+       <nav>
+           <ul class="header-nav1">
+               <li><a href="#">BUS TICKETS</li>
+                <li><a href="#">HOTELS</li>
+                <li><a href="#">BUS HIRE</li>
+                <li><a href="#">CARS</li>
+           </ul>
+           <ul class="header-nav2">
+               <li><a href="#">Bengalore</li>
+                <li><a href="#">Red bus support</li>
+                <li><a href="#">Managing bookings</li>
+                <li><a href="#" onclick="here()">Login</a></li>
+                <li><a href="#">sign up</a></li>
+           </ul>
+       </nav>
+   </header>
+   <div>
+        <form id="dis">
+            <label>Username</label>
+            <input type="text" name="Username" id="user" required > <span id="pop"></span>
+            <label>Password</label>
+            <input type="password" name="password"><br>
+            <button type="button" onclick="subClick()">Login</button>
+            <button type="button">Cancel</button>
+        </form>       
+   </div>
+</body>
+
+</html>
